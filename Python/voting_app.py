@@ -37,17 +37,17 @@ def display_menu():
 		
 def display_votes_page():
 	display = """
-			===================================
+			========================================
 				**WELCOME TO VOTERS PAGE**
-				     Click any number
-				to Commence registration
-			====================================
+			''''''''''''''''''''''''''''''''''''''''	
+				   Lets start your voting
+					registration
+			========================================
 		"""
 	return display
 		
 def voters_reg():
 	print(display_votes_page())
-	display_input = int(input("Enter any number:"))
 		#if(typeof(displayInput) === str){
 		#console.log("Invalid") 
 	while True:
@@ -104,21 +104,22 @@ def election_result():
 			largest = candidates_votes[index]
 	print("The highest is ", largest, " votes")
 
-user_input = None
-while(user_input != 4):
-	print(display_menu())
-	user_input = int(input('Enter an Option:'))	
-	match(user_input):
-		case 1: 
-			vote_process()
-		case 2:
-			voters_reg()
-		case 3:
-			election_result()
-		case 4:
-			print("Alright Bye!")
-			break
-		case _:	
-			print("Invalid input")
+def main():
+	user_input = None
+	while(user_input != 4):
+		print(display_menu())
+		user_input = int(input('Enter an Option:'))	
+		match(user_input):
+			case 1: 
+				vote_process()
+			case 2:
+				voters_reg()
+			case 3:
+				election_result()
+			case 4:
+				print("Alright Bye!")
+				break
+			case _:
+				print("Invalid input")
 			
-			
+main()			
